@@ -39,10 +39,15 @@
             border-radius: 8px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
         .btn-package {
-            width: 100%;
-            font-size: 1.1em;
+            width: auto;
+            font-size: 1em;
+            padding: 8px 16px;
             background-color: #28a745;
             color: white;
         }
@@ -82,6 +87,59 @@
             text-decoration: none;
             margin-left: 10px;
         }
+        .buy-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        /* Ensures equal card heights */
+        .deal-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .deal-bar .col-md-4 {
+            display: flex;
+            justify-content: center;
+        }
+        /* Makes sure the card sizes are equal and consistent */
+        .package-card {
+            width: 100%;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+        }
+        /* Adjust column layout on mobile view */
+        @media (max-width: 768px) {
+            .deal-bar .col-md-4 {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .package-card {
+                margin-bottom: 15px;
+            }
+        }
+        /* Center the Contact Us section on desktop */
+        @media (min-width: 768px) {
+            #contact-us {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                margin-top: 50px;
+            }
+            .btn-success {
+                font-size: 1.2em;
+                padding: 12px 25px;
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -94,7 +152,7 @@
             <a href="#data-packages">Data Deals</a> |
             <a href="#sms-packages">SMS Deals</a> |
             <a href="#minutes-packages">Minutes Deals</a> |
-            <a href="#contact-us">Contact Us</a> <!-- New Contact Us Shortcut -->
+            <a href="#contact-us">Contact Us</a>
         </div>
 
         <!-- Note Carousel -->
@@ -118,7 +176,7 @@
         <!-- Data Packages Section -->
         <div id="data-packages" class="deal-bar">
             <h2 class="deal-heading">Data Packages</h2>
-            <div class="row">
+            <div class="row w-100">
                 {% for key, value in data_packages.items() %}
                     <div class="col-md-4">
                         <div class="card package-card">
@@ -127,7 +185,9 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text">Validity: {{ value[2] }}</p>
-                                <a href="{{ url_for('choose_package', package_id=key) }}" class="btn btn-package">BUY</a>
+                                <div class="buy-button-container">
+                                    <a href="{{ url_for('choose_package', package_id=key) }}" class="btn btn-package">BUY</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -141,7 +201,7 @@
         <!-- SMS Packages Section -->
         <div id="sms-packages" class="deal-bar">
             <h2 class="deal-heading">SMS Packages</h2>
-            <div class="row">
+            <div class="row w-100">
                 {% for key, value in sms_packages.items() %}
                     <div class="col-md-4">
                         <div class="card package-card">
@@ -150,7 +210,9 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text">Validity: {{ value[2] }}</p>
-                                <a href="{{ url_for('choose_package', package_id=key) }}" class="btn btn-package">BUY</a>
+                                <div class="buy-button-container">
+                                    <a href="{{ url_for('choose_package', package_id=key) }}" class="btn btn-package">BUY</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -164,7 +226,7 @@
         <!-- Minutes Packages Section -->
         <div id="minutes-packages" class="deal-bar">
             <h2 class="deal-heading">Minutes Packages</h2>
-            <div class="row">
+            <div class="row w-100">
                 {% for key, value in minutes_packages.items() %}
                     <div class="col-md-4">
                         <div class="card package-card">
@@ -173,7 +235,9 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text">Validity: {{ value[2] }}</p>
-                                <a href="{{ url_for('choose_package', package_id=key) }}" class="btn btn-package">BUY</a>
+                                <div class="buy-button-container">
+                                    <a href="{{ url_for('choose_package', package_id=key) }}" class="btn btn-package">BUY</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -197,23 +261,22 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             <div class="container">
-                <div class="alert alert-{{ messages[0][0] }}">
-                    {{ messages[0][1] }}
+                <div class="alert alert-success mt-3">
+                    {% for category, message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
                 </div>
             </div>
         {% endif %}
     {% endwith %}
 
-    <!-- Footer with WhatsApp Contact Option -->
-    <div class="footer">
-        <p>&copy; 2024 Emmkash Tech. All rights reserved.</p>
-        <p>Contact us for help:</p>
-        <a href="https://wa.me/0112735877" target="_blank" class="contact-icon">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Bingwa Sokoni. All rights reserved.</p>
+    </footer>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
