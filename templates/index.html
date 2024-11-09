@@ -170,6 +170,10 @@
                 <div class="carousel-item">
                     Powered by Emmkash Tech
                 </div>
+                <!-- Added New Note -->
+                <div class="carousel-item">
+                    NUNUA HATA UKIWA NA OKOA JAHAZI
+                </div>
             </div>
         </div>
 
@@ -261,22 +265,25 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             <div class="container">
-                <div class="alert alert-success mt-3">
-                    {% for category, message in messages %}
-                        <p>{{ message }}</p>
-                    {% endfor %}
+                <div class="alert alert-success mt-4">
+                    <ul>
+                        {% for category, message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         {% endif %}
     {% endwith %}
 
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Emmkash Tech Bingwa Sokoni. All rights reserved.</p>
+        <p>&copy; 2024 Bingwa Sokoni. All rights reserved.</p>
     </footer>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
