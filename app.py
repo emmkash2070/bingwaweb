@@ -3,7 +3,6 @@ import base64
 import requests
 from flask import Flask, render_template, request, redirect, url_for, flash
 from dotenv import load_dotenv
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 # Load environment variables
 load_dotenv()
@@ -15,10 +14,9 @@ app.secret_key = os.urandom(24)
 # Load API credentials from environment variables
 API_USERNAME = os.getenv('API_USERNAME')
 API_PASSWORD = os.getenv('API_PASSWORD')
-BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 # Check that environment variables are set
-if not all([API_USERNAME, API_PASSWORD, BOT_TOKEN]):
+if not all([API_USERNAME, API_PASSWORD]):
     raise EnvironmentError("Required environment variables are not set.")
 
 # Create Basic Auth token
