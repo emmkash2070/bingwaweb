@@ -42,17 +42,17 @@ data_packages = {
 sms_packages = {
     'sms_1': ('20 SMS, 1day @ Ksh 5', 5),
     'sms_2': ('200 SMS, 1day @ Ksh 10', 10),
-    'sms_3': ('100 SMS, 7day @ Ksh 21', 21),
-    'sms_4': ('1,000 SMS, 7day @ Ksh 30', 30),
-    'sms_5': ('1,500 SMS, 30day @ Ksh 101', 101),
-    'sms_6': ('3,500 SMS, 30day @ Ksh 201', 201)
+    'sms_3': ('100 SMS, 7days @ Ksh 21', 21),
+    'sms_4': ('1,000 SMS, 7days @ Ksh 30', 30),
+    'sms_5': ('1,500 SMS, 30days @ Ksh 101', 101),
+    'sms_6': ('3,500 SMS, 30days @ Ksh 201', 201)
 }
 
 minutes_packages = {
     'min_1': ('50 flex, till midnight @ Ksh 50', 50),
-    'min_2': ('300min, 30day @ Ksh 499', 499),
-    'min_3': ('8GB+400min, 30day @ Ksh 999', 999),
-    'min_4': ('800min, 30day @ Ksh 1,000', 1000)
+    'min_2': ('300min, 30days @ Ksh 499', 499),
+    'min_3': ('8GB+400min, 30days @ Ksh 999', 999),
+    'min_4': ('800min, 30days @ Ksh 1,000', 1000)
 }
 
 # Function to create inline keyboard for data packages
