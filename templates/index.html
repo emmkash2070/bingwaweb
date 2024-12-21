@@ -154,26 +154,529 @@
             <a href="#minutes-packages">Minutes Deals</a> |
             <a href="#contact-us">Contact Us</a>
         </div>
+<!-- Google Fonts link for Poppins font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Google Fonts link for Poppins font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        <!-- Note Carousel -->
-        <div id="noteCarousel" class="carousel slide mb-4" data-ride="carousel" data-interval="3000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    KUNUNUA NI MARA MOJA KWA SIKU
+<!-- Google Fonts link for Poppins font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Google Fonts link for Poppins font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Google Fonts link for Poppins font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Christmas Carousel (No Box) -->
+<div id="noteCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" style="text-align: center; font-size: 1.2rem; font-family: 'Poppins', sans-serif; color: white; text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8); max-width: 90%; margin: 0 auto;">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            🎄 Wishing You a Merry Christmas and a Happy New Year! 🎄
+        </div>
+        <div class="carousel-item">
+            🎅 Unwrap the best data deals this festive season! 🎅
+        </div>
+        <div class="carousel-item">
+            🎁 Give the gift of connection with amazing SMS deals! 🎁
+        </div>
+        <div class="carousel-item">
+            🌟 Powered by Emmkash Tech - Bringing Joy to You! 🌟
+        </div>
+        <div class="carousel-item">
+            🔔 Stay connected all season long, no matter where you are! 🔔
+        </div>
+        <div class="carousel-item">
+            ❄️ Let it snow! Enjoy our holiday discounts now. ❄️
+        </div>
+    </div>
+</div>
+
+<!-- Snowfall Effect -->
+<div class="snow-container"></div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="christmas_carol.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Festive CSS -->
+<style>
+    /* Snowfall Container */
+    .snow-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 5;
+        overflow: hidden;
+    }
+
+    /* Snowflake Styling */
+    .snowflake {
+        position: absolute;
+        top: -50px; /* Start above the visible area */
+        color: white;
+        font-size: 1rem;
+        opacity: 0.8;
+        animation: snowFall linear infinite;
+    }
+
+    /* Snowfall Animation */
+    @keyframes snowFall {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(100vh);
+        }
+    }
+
+    /* Carousel Styling */
+    #noteCarousel {
+        overflow: hidden;
+    }
+
+    .carousel-inner .carousel-item {
+        text-align: center;
+        padding: 15px; /* Smaller padding for a compact look */
+    }
+
+    /* Text Glow Effect */
+    .glow {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 0, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.5);
+    }
+</style>
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 3; i++) { // Create only 3 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously every 5 seconds
+    setInterval(createSnowflakes, 5000); // Add snowflakes every 5 seconds
+</script>
+
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 5; i++) { // Create only 5 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously every 5 seconds
+    setInterval(createSnowflakes, 5000); // Add snowflakes every 5 seconds
+</script>
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 5; i++) { // Create only 5 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously every 5 seconds
+    setInterval(createSnowflakes, 5000); // Add snowflakes every 5 seconds
+</script>
+
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 3; i++) { // Create only 3 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously every 5 seconds
+    setInterval(createSnowflakes, 5000); // Add snowflakes every 5 seconds
+</script>
+
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 3; i++) { // Create only 3 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously every 5 seconds
+    setInterval(createSnowflakes, 5000); // Add snowflakes every 5 seconds
+</script>
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 3; i++) { // Create only 3 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously every 5 seconds
+    setInterval(createSnowflakes, 5000); // Add snowflakes every 5 seconds
+</script>
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 10; i++) { // Create 10 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously
+    setInterval(createSnowflakes, 2000); // Add snowflakes every 2 seconds
+</script>
+
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 10; i++) { // Create 10 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously
+    setInterval(createSnowflakes, 2000); // Add snowflakes every 2 seconds
+</script>
+
+
+<!-- Snowfall Script -->
+<script>
+    const createSnowflakes = () => {
+        const body = document.body;
+        for (let i = 0; i < 10; i++) { // Generate 10 snowflakes
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 1 + 'rem'; // Varied size
+            snowflake.style.animationDuration = Math.random() * 3 + 5 + 's'; // Fall duration: 5-8s
+            snowflake.style.animationDelay = Math.random() * 2 + 's'; // Staggered start
+
+            body.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously
+    setInterval(createSnowflakes, 2000); // Every 2 seconds
+</script>
+
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const body = document.body;
+        for (let i = 0; i < 5; i++) { // Generate only 5 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.8 + 'rem'; // Varied size
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 3 + 's'; // Staggered start
+
+            body.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously
+    setInterval(createSnowflakes, 3000); // Add snowflakes every 3 seconds
+</script>
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 10; i++) { // Create 10 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously
+    setInterval(createSnowflakes, 2000); // Add snowflakes every 2 seconds
+</script>
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 10; i++) { // Create 10 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 7 + 's'; // 7 to 12 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously
+    setInterval(createSnowflakes, 2000); // Add snowflakes every 2 seconds
+</script>
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 50; i++) { // Create 50 snowflakes at a time
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Snowflake symbol
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 5 + 's'; // 5 to 10 seconds
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Staggered start
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously
+    setInterval(createSnowflakes, 1000); // Add snowflakes every second
+</script>
+
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflakes = () => {
+        const snowContainer = document.querySelector('.snow-container');
+        for (let i = 0; i < 100; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+
+            snowContainer.appendChild(snowflake);
+
+            // Remove snowflake after animation ends
+            snowflake.addEventListener('animationend', () => snowflake.remove());
+        }
+    };
+
+    // Generate snowflakes continuously
+    setInterval(createSnowflakes, 500);
+</script>
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflake = () => {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // between 2-5 seconds
+        snowflake.style.animationDelay = Math.random() * 5 + 's'; // up to 5 seconds
+        snowflake.style.width = snowflake.style.height = Math.random() * 5 + 5 + 'px'; // size 5-10px
+
+        document.getElementById('snowfall').appendChild(snowflake);
+
+        // Remove the snowflake after animation ends
+        snowflake.addEventListener('animationend', () => {
+            snowflake.remove();
+        });
+    };
+
+    setInterval(createSnowflake, 100);
+</script>
+
+
+<!-- Snowfall JavaScript -->
+<script>
+    const createSnowflake = () => {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // between 2-5 seconds
+        snowflake.style.animationDelay = Math.random() * 5 + 's'; // up to 5 seconds
+        snowflake.style.width = snowflake.style.height = Math.random() * 5 + 5 + 'px'; // size 5-10px
+
+        document.getElementById('snowfall').appendChild(snowflake);
+
+        // Remove the snowflake after animation ends
+        snowflake.addEventListener('animationend', () => {
+            snowflake.remove();
+        });
+    };
+
+    setInterval(createSnowflake, 100);
+</script>
+
+ 
+<div class="snowfall"></div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="christmas_carol.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    Data packages offer unbeatable value!
-                </div>
-                <div class="carousel-item">
-                    Choose the best SMS deal and stay connected.
-                </div>
-                <div class="carousel-item">
-                    Powered by Emmkash Tech
-                </div>
-                <!-- Added New Note -->
-                <div class="carousel-item">
-                    NUNUA HATA UKIWA NA OKOA JAHAZI
-                </div>
+            </div>
+            
+            <!-- Snowfall Effect -->
+            <div class="snowfall"></div>
+            
+            <!-- JavaScript for Snowfall Effect -->
+            <script>
+                // Generate snowflakes dynamically
+                const snowfallContainer = document.querySelector('.snowfall');
+            
+                function createSnowflakes() {
+                    for (let i = 0; i < 100; i++) {
+                        let snowflake = document.createElement('div');
+                        snowflake.classList.add('snowflake');
+                        snowflake.style.left = ${Math.random() * 100}vw;
+                        snowflake.style.animationDuration = ${Math.random() * 5 + 5}s;
+                        snowfallContainer.appendChild(snowflake);
+                    }
+                }
+            
+                window.onload = createSnowflakes;
+            </script>
+            
+            <!-- Bootstrap and jQuery -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script
+
             </div>
         </div>
 
@@ -298,6 +801,6 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!--End of Tawk.to Script-->   
 </body>
 </html>
