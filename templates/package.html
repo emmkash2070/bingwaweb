@@ -1,53 +1,108 @@
-// loader.js
-
-// Step 1: Create the loader dynamically
-const loader = document.createElement('div');
-loader.id = 'loader';
-loader.innerHTML = `
-    <div class="spinner"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+        /* Centering everything vertically and horizontally */
+        body, html {
             height: 100%;
-            background: rgba(255, 255, 255, 0.9); /* White background with some transparency */
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 9999;
+            background-color: #f4f4f4; /* Light gray background */
+            font-family: 'Arial', sans-serif;
         }
 
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid white; /* White borders */
-            border-top: 5px solid green; /* Green top border */
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        .container {
+            width: 100%;
+            max-width: 600px; /* Limit the container's width */
+            text-align: center;
         }
 
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+        h1 {
+            color: #006400; /* Dark Green */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            border: 1px solid #006400; /* Green border */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 100, 0, 0.2); /* Green shadow effect */
+            margin-top: 20px;
+        }
+
+        .card-body {
+            background-color: #ffffff; /* White background */
+        }
+
+        .card-title {
+            color: #006400; /* Dark Green for the title */
+        }
+
+        .card-text {
+            color: #333; /* Dark gray for text */
+        }
+
+        .btn-primary {
+            background-color: #006400; /* Dark Green button */
+            border-color: #006400;
+        }
+
+        .btn-primary:hover {
+            background-color: #004d00; /* Darker Green on hover */
+            border-color: #004d00;
+        }
+
+        .alert {
+            border-radius: 5px;
+            background-color: #e7f9e7; /* Light green background for alerts */
+            color: #006400; /* Dark Green text for alerts */
+        }
+
+        .alert-success {
+            background-color: #e7f9e7;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da; /* Red background for error */
+            color: #721c24; /* Red text */
         }
     </style>
-`;
+</head>
+<body>
+    <div class="container">
+        <h1>Package Details</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ package[0] }}</h5>
+                <p class="card-text">Price: Ksh {{ package[1] }}</p>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="phone_number">Enter phone number:</label>
+                        <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+                </form>
+            </div>
+        </div>
 
-// Step 2: Add the loader to the DOM immediately
-document.body.appendChild(loader);
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert alert-{{ messages[0][0] }}">
+                    {{ messages[0][1] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
 
-// Step 3: Remove the loader once the page is fully loaded
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    if (loader) {
-        loader.style.opacity = '0'; // Fade out (optional)
-        setTimeout(() => loader.remove(), 500); // Remove after fade-out
-    }
-});
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Include the loader.js script -->
+    <script src="loader.js"></script>
+</body>
+</html>
