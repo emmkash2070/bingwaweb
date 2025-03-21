@@ -15,6 +15,10 @@ app.secret_key = os.urandom(24)
 API_USERNAME = os.getenv('API_USERNAME')
 API_PASSWORD = os.getenv('API_PASSWORD')
 
+# Print the environment variables for debugging purposes (remove in production)
+print(f"API_USERNAME: {API_USERNAME}")
+print(f"API_PASSWORD: {API_PASSWORD}")
+
 # Check that environment variables are set
 if not all([API_USERNAME, API_PASSWORD]):
     raise EnvironmentError("Required environment variables are not set.")
